@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: svc1
+spec:
+  replicas: {{ .Values.services.default.replicas.count }}
+  template:
+    spec:
+      containers:
+        - name: svc1
+          image: "{{ .Values.services.svc1.image.repository }}:{{ .Values.services.svc1.image.tag | default .Values.services.default.imageTag }}"
+          imagePullPolicy: {{ .Values.services.svc1.pullPolicy | default .Values.services.default.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.services.svc1.port | default .Values.services.default.port }}
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /probe/liveness
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /probe/readiness
+              port: http
+          resources: {{ .Values.services.svc1.resources | default .Values.services.default.resources }}

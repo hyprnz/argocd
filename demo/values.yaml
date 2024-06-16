@@ -1,0 +1,18 @@
+services:
+  default:
+    imageTag: latest
+    port: 8080
+    pullPolicy: IfNotPresent
+    replicas:
+      count: 3
+      max: 100
+      min: 1
+    resources:
+      limits:
+        memory: 128Mi
+      requests:
+        memory: 128Mi
+    type: ClusterIP
+  svc1:
+    image:
+      repository: nginx
