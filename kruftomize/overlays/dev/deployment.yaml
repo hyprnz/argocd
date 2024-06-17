@@ -1,0 +1,9 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+spec:
+  spec:
+    containers:
+      - name: app
+        image: nginx:nginx:1.27-otel
