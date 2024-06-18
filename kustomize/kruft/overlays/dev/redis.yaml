@@ -7,4 +7,4 @@ spec:
     spec:
       containers:
         - name: app
-          image: redis:7.4-rc
+          image: redis:7.0
