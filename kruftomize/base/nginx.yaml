@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+spec:
+  selector:
+  matchLabels:
+    app: nginx
+  template:
+  metadata:
+    labels:
+      app: nginx
+  spec:
+    containers:
+      - name: app
+        image: nginx:latest
+        ports:
+          - name: http
+            containerPort: 8080
+            protocol: TCP
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  ports:
+    - name: http
+      port: 8080
+  selector:
+  app: nginx
+
+---
+
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: nginx
+spec:
+  scaleTargetRef:
+  apiVersion: apps/v1
+  kind: Deployment
+  name: nginx
+  minReplicas: 1
+  maxReplicas: 3
+  metrics:
+    - type: Resource
+  resource:
+    name: cpu
+    target:
+      type: Utilization
+      averageUtilization: 50

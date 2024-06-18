@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
   - ../../base
 patchesStrategicMerge:
-  - deployment.yaml
+  - nginx.yaml
+  - redis.yaml
