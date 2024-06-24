@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: travel-api
+spec:
+  template:
+    spec:
+      containers:
+        - name: app
+          image: 381491947495.dkr.ecr.ap-southeast-2.amazonaws.com/travel-api:0.1.2

@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+patches:
+  - target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: travel-api
+    path: travel-api.yaml
+  - target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: travel-bff
+    path: travel-bff.yaml
