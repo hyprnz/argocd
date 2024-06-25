@@ -7,4 +7,4 @@ spec:
     spec:
       containers:
         - name: app
-          image: 381491947495.dkr.ecr.ap-southeast-2.amazonaws.com/travel-bff:dev
+          image: 381491947495.dkr.ecr.ap-southeast-2.amazonaws.com/travel-bff:0.1.1
