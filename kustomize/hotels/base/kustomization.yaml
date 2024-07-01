@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - travel-api.yaml
   - travel-bff.yaml
+  - travel-ui.yaml
