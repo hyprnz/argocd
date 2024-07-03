@@ -4,9 +4,9 @@ resources:
   - ../../base
 patches:
   - target:
-      kind: Ingress
+      kind: Route
       name: hotels
-    path: ingress.yaml
+    path: routes.yaml
   - target:
       group: apps
       version: v1
