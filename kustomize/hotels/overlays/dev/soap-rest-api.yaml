@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: soap-rest-api
+spec:
+  template:
+    spec:
+      containers:
+        - name: app
+          image: 381491947495.dkr.ecr.ap-southeast-2.amazonaws.com/soap-rest-api:latest

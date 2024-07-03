@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hotels
+spec:
+  rules:
+  - host: hotels-travel-dev.apps.rosa.q4q0q7j8e3t4y1y.oynm.p3.openshiftapps.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: travel-ui
+            port:
+              number: 8080
+        path: /search
+        pathType: Exact

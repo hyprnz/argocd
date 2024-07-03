@@ -1,13 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: travel-api
+  name: travel-bff
 spec:
   template:
     spec:
       containers:
         - name: app
-          image: 381491947495.dkr.ecr.ap-southeast-2.amazonaws.com/travel-api:fe9af6bd-rc
+          image: 381491947495.dkr.ecr.ap-southeast-2.amazonaws.com/travel-bff:36288706-main
           env:
             - name: NODE_ENV
               value: test
