@@ -4,13 +4,13 @@ metadata:
   name: hotels
 spec:
   host: hotels.yourcluster.example.com
+  # path: /search
   to:
     kind: Service
     name: travel-ui
     weight: 100
-  port:
-    targetPort: 3000
-  wildcardPolicy: None
-  tls:
-    termination: reencrypt
-    insecureEdgeTerminationPolicy: Redirect
+  # wildcardPolicy: None
+  # tls:
+  #   # termination: reencrypt
+  #   termination: edge
+  #   insecureEdgeTerminationPolicy: Redirect
