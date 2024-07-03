@@ -16,18 +16,18 @@ spec:
           image: 381491947495.dkr.ecr.ap-southeast-2.amazonaws.com/travel-ui:latest
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 8080
               protocol: TCP
           livenessProbe:
             httpGet:
               path: /
-              port: 80
+              port: 8080
             initialDelaySeconds: 3
             periodSeconds: 3
           readinessProbe:
             httpGet:
               path: /
-              port: 80
+              port: 8080
             initialDelaySeconds: 3
             periodSeconds: 3
 
@@ -41,7 +41,7 @@ spec:
     - name: http
       port: 8080
       protocol: TCP
-      targetPort: 80
+      targetPort: 8080
   selector:
     app: travel-ui
 
