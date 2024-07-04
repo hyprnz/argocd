@@ -1,0 +1,6 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: hotel-ui
+spec:
+  host: hotel-ui-travel-dev.apps.rosa.q4q0q7j8e3t4y1y.oynm.p3.openshiftapps.com

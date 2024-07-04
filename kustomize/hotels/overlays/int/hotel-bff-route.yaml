@@ -1,0 +1,6 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: hotel-bff
+spec:
+  host: hotel-bff-travel-int.apps.rosa.q4q0q7j8e3t4y1y.oynm.p3.openshiftapps.com

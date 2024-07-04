@@ -62,3 +62,16 @@ spec:
         target:
           type: Utilization
           averageUtilization: 66
+
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: hotel-bff
+spec:
+  host: hotel-bff.yourcluster.example.com
+  # path: /search
+  to:
+    kind: Service
+    name: travel-bff
+    weight: 100
