@@ -64,16 +64,3 @@ spec:
         target:
           type: Utilization
           averageUtilization: 66
-
----
-apiVersion: route.openshift.io/v1
-kind: Route
-metadata:
-  name: hotel-ui
-spec:
-  host: hotel-ui.yourcluster.example.com
-  # path: /search
-  to:
-    kind: Service
-    name: travel-ui
-    weight: 100

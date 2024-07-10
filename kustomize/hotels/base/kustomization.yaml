@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - soap-rest-api.yaml
+  - routes.yaml
   - travel-api.yaml
   - travel-bff.yaml
   - travel-ui.yaml

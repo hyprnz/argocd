@@ -4,6 +4,10 @@ resources:
   - ../../base
 patches:
   - target:
+      kind: Ingress
+      name: hotels
+    path: ingress.yaml
+  - target:
       group: apps
       version: v1
       kind: Deployment
@@ -22,16 +26,8 @@ patches:
       name: travel-bff
     path: travel-bff.yaml
   - target:
-      kind: Route
-      name: hotel-bff
-    path: hotel-bff-route.yaml
-  - target:
       group: apps
       version: v1
       kind: Deployment
       name: travel-ui
     path: travel-ui.yaml
-  - target:
-      kind: Route
-      name: hotel-ui
-    path: hotel-ui-route.yaml

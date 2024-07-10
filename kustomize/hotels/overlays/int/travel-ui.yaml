@@ -7,7 +7,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: 381491947495.dkr.ecr.ap-southeast-2.amazonaws.com/travel-ui:36288706-main
+          image: 381491947495.dkr.ecr.ap-southeast-2.amazonaws.com/travel-ui:http-server-03
           env:
             - name: NODE_ENV
               value: test
